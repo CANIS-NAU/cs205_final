@@ -5,6 +5,21 @@
 #    Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
 
+{
+hp+= $5
+#the above is used to add all of the things in field 5 and assign it to hp
+line++
+#the above counts the amount of lines that we have in the file so we can find
+#the average of hp and later the average of attack
+attack+= $6
+#the above is the same as the hp one but for field 6
+}
+END{
+print line
+print hp / line
+#divides hp by line to get the mean
+#the below does the same but with attack instead of hp
+print attack / line}
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
