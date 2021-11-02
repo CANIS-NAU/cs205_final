@@ -25,8 +25,10 @@ sum=0
 }
 }
 END{
+{print "======= SUMMARY OF POKEMON.DAT ======"}
 {print "    Total Pokemon: " (sum-1)}
 {print "    Avg. HP: " (hp/(sum-1))}
-print "    Avg. Attack: " (attack/(sum-1))}
+{print "    Avg. Attack: " (attack/(sum-1))}
+print "======= END SUMMARY ======="}
 
 ' $File
