@@ -17,12 +17,16 @@ if (NR!=1){
 hp+=$6
 fi
 }
-{ sum=0
+if (NR!=1){
+attack+=$7
+fi
+sum=0
 {for (n=1;n<=NR;n++) sum+=1}
 }
 }
 END{
 {print "    Total Pokemon: " (sum-1)}
-print "    Avg. HP: " (hp/(sum-1))}
+{print "    Avg. HP: " (hp/(sum-1))}
+print "    Avg. Attack: " (attack/(sum-1))}
 
 ' $File
