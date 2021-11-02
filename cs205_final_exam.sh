@@ -11,5 +11,18 @@
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
 File=$1
-awk' BEGIN{FS="\t"} {sum=0 {for (n=1;n<=NR;n++) sum+=1} {print "    Total Pokemon: "(sum-1)}
+awk ' BEGIN {FS="\t"}
+{
+if (NR!=1){
+hp+=$6
+fi
+}
+{ sum=0
+{for (n=1;n<=NR;n++) sum+=1}
+}
+}
+END{
+{print "    Total Pokemon: " (sum-1)}
+print "    Avg. HP: " (hp/(sum-1))}
+
 ' $File
