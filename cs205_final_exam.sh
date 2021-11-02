@@ -14,7 +14,7 @@
 #Ian
 #ivo
 
-#set delimiter to tab
+#set delimiter to tab character
 BEGIN{FS="\t"}
 {
 	#loop through each line
