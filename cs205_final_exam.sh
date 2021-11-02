@@ -4,6 +4,30 @@
 #    Avg. HP: [VALUE]
 #    Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
+# Section Numbe: 001
+# Last Name: Liu
+# First Name: Pengfei
+# NAU Username: pl384
+BEGIN{FS = "\t"}
+{
+	if (NR != 1){
+	#Counts the number of lines in the file
+		sum += 1
+	#TODO change HP to add up the number of HP on the Pokemon listed
+		hp += 1
+		hp_sum += $6
+		hp_average_mean = hp_sum / hp
+		attack_sum += $7
+		attack_average_mean = attack_sum / hp
+	}
+}
+END{
+# Prints the number of lines in the file
+	print "Total Pokemon:" sum
+	print "AVg. HP: " hp_average_mean
+	print "Avg. Attack: " attack_average_mean
+}
+
 
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The spacing and header formatting should match the above formatting description exactly.
