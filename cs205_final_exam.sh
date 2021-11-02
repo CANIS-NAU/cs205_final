@@ -19,16 +19,15 @@
 # Creating the Header:
 echo "======= SUMMARY OF POKEMON.DAT ======="
 
-# Finding the total pokemon.
-echo "Total Pokemon: "
-for poke in $1
-do
-	wc -l $1
-done
+# Finding the total amount of pokemon in pokemon.dat using wc, then printing the output to the screen:
+TOTPOKE=`wc -l < pokemon.dat`
+echo "Total Pokemon: $TOTPOKE"
 
-HP=0
-echo "Avg. HP: $HP"
+#Finding the avg. HP, then printing it to the screen:
+AVGHP=0
+echo "Avg. HP: $AVGHP"
 
+# Finding the avg. Attack, then printing it to the screen:
 ATTK=0
 echo "Avg. Attack: $ATTK"
 
