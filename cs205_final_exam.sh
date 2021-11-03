@@ -3,6 +3,12 @@
 #    Total Pokemon: [VALUE]
 #    Avg. HP: [VALUE]
 #    Avg. Attack: [VALUE]
+awk 'END{print "Total Pokemon: " $1}' pokemon.dat 
+awk '{SUM += $6} END{print "Avg. HP: " SUM/NR}' pokemon.dat 
+awk '{SUM += $7} END{print "Avg. Attack: " SUM/NR}' pokemon.dat 
+ 
+
+
 # ======= END SUMMARY =======
 
 # The "Avg." values should be calculated as mean values for the corresponding columns.
