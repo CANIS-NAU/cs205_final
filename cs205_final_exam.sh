@@ -5,6 +5,16 @@
 #    Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
 
+awk '{ HP += $6 
+	ATK += $7 }
+	END{ print "======= SUMMARY OF POKEMON.DAT ======"
+	print "Total Pokemon:", (NR-1) 
+	print "Avg. HP:", HP/(NR-1)
+	print "Avg. Attack:", ATK/(NR-1)
+	print "======= END SUMMARY ======="}' pokemon.dat
+
+
+
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
