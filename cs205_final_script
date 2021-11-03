@@ -9,3 +9,17 @@
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
+
+if [ $1 ]
+then
+#The echo line simply presents a heder that will be printed before outputting the requested data.
+	echo "======= SUMMARY OF POKEMON.DAT ======="
+#The awl script is used to take the averages of the hp and the attack in columns 6 and 7, denoted with $6 and $7 respectivley, wich should print a labled output.
+#Awk is used to take the averages, 'awk', which discounts the header row, while the script in '{}' is used to do the actual math. 
+	
+	awk -F'\t' '{row += 1; hp += $6; attack += $7}; END{print "Total Pokemon: "row-1; print " Avg. HP: "hp/(row-1); print " Avg. Attack: "attack/(row-1)}' $1
+
+#The echo line below simply prints a phrase to denote the end of the output
+	echo "==== END SUMMARY ===="
+fi
+
