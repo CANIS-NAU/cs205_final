@@ -9,3 +9,12 @@
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
+
+FILE=$1
+LINES=0
+BEGINPROMPT="======= SUMMARY OF POKEMON.DAT ======"
+ENDPROMPT="======= END SUMMARY ======="
+
+awk ' {hpsum+=$(NF-8); atsum+=$(NF-7); LINES+=1;} 
+END{print "======= SUMMARY OF POKEMON.DAT ======"; print "   Total Pokemon: "LINES; print "   Avg. HP: " hpsum/LINES; print "   Avg. Attack:" atsum/LINES; print "======= END SUMMARY ======="}' $FILE
+
