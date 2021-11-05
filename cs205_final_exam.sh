@@ -17,8 +17,7 @@ BEGIN{ FS = "\t"}
 avg_HP = hp/tot_Pokemon
 avg_Attack = attack/tot_Pokemon
 
-END
-{
+END{
 	print "Total Pokemon: "tot_Pokemon
 	print "Avg. HP: "avg_HP
 	print "Avg. Attack: "avg_Attack
