@@ -4,7 +4,27 @@
 #    Avg. HP: [VALUE]
 #    Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
+BEGIN{FS="\t"}
+{
+	if (NR != 1){
+		#calculate hp
+		hp += $6
 
+		#get number of lines
+		lines += 1
+
+		#get attack 
+		attack += $7
+	}
+}
+END{
+	#prints all of the results
+	print " ======= SUMMARY OF POKEMON.DAT ======"
+	print "	   Total Pokemon: " lines
+	print "	   Avg. HP: " hp / lines
+	print "	   Avg. Attack: " attack / lines
+	print " ======= END SUMMARY ======= "
+}
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
