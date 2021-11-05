@@ -20,7 +20,7 @@ avg_Attack = attack/tot_Pokemon
 END
 {
 	print "Total Pokemon: "tot_Pokemon
-	print " Avg. HP: "avg_HP
+	print "Avg. HP: "avg_HP
 	print "Avg. Attack: "avg_Attack
 }
 
