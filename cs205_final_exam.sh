@@ -2,8 +2,7 @@
 # ======= SUMMARY OF POKEMON.DAT ======
 #    Total Pokemon: [VALUE]
 #    Avg. HP: [VALUE]
-#    Av
-g. Attack: [VALUE]
+#    Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
 
 BEGIN{ FS = "\t"}
