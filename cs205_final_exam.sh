@@ -1,5 +1,28 @@
 # TODO: Modify this file to create a shell script that is able to use awk to go through a file formatted like pokemon.dat and provides a printed report in the following format (where your script correctly calculates the values that go into the [VALUE] placeholders):
 # ======= SUMMARY OF POKEMON.DAT ======
+#Taylor Twitchell final
+
+BEGIN{FS ="\t"}
+{
+if (NR!=1){
+
+hp+=1
+
+sum +=1
+sum2 +=$6/800 
+sum3 +=$7/800
+}
+}
+END{
+print "Total Pokemon:"sum,
+        "AVG HP:"sum2,
+      "AVG ATTACK:"sum3}
+
+
+
+
+
+
 #    Total Pokemon: [VALUE]
 #    Avg. HP: [VALUE]
 #    Avg. Attack: [VALUE]
