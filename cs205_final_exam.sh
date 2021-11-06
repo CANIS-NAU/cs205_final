@@ -15,10 +15,10 @@ BEGIN{FS="\t"}
 if (NR!=0){
 
 #add up hp
-hp += $5
+hp += $6
 
 #add up attack
-attack += $6
+attack += $7
 
 #Counts the number of lines(pokemon) in the file
 sum+=1 } }
