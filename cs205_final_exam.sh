@@ -14,23 +14,30 @@ in_file=$1
 
 main()
 {
+    # init awk script and use tab as separator
     awk 'BEGIN {FS = "\t"}
     {
+        # get file name
         file = ARGV[1]
     }
     
     {
+        # if the current line number is not #1
         if ( NR != 1 )
         {
+            # sum colums 6 and 7
             hp  += $6;
             att += $7;
         }
     }
 
+    # after iterating through the whole file
     END{
-        avg_hp  = hp / FNR;
-        avg_att = att / FNR;
+        # average the hp and attack vals using total number of lines
+        avg_hp  = hp / FNR - 1;
+        avg_att = att / FNR - 1;
 
+        # print output
         printf "\n======= SUMMARY OF %s  ======\n", file
         printf "Total pokemon: %d\n", FNR - 1
         printf "Avg. HP: %d\n", avg_hp
