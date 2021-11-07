@@ -9,3 +9,24 @@
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
+
+BEGIN{FS="\t"}
+{
+if (NR!=1){
+# Add up the number of HP on the Pokemon listed
+hp+=$6
+
+# Add up the total attack points on the Pokemon listed
+atk+=$7
+
+# Counts the total number of Pokemon (lines) in the file
+sum+=1
+}
+}
+END{
+# Prints the results
+{ printf "======= SUMMARY OF POKEMON.DAT ======\n" }
+{ printf "Total Pokemon: %d\n", sum }
+{ printf "Avg. HP: %f\n", hp/sum }
+{ printf "Avg. Attack: %f\n", atk/sum }
+{ printf "======= END SUMMARY ======= \n" } }
