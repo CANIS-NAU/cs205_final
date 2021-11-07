@@ -9,3 +9,19 @@
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
+
+#!/bin/bash
+
+
+PKM=cat $1 | wc -l
+HP=0
+
+
+
+
+echo '======= SUMMARY OF POKEMON.DAT ======'
+echo '   Total Pokemon: ' $PKM
+echo '   Avg. HP: '
+echo '   Avg. Attack: '
+echo ' ======= END SUMMARY ======='
+
