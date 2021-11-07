@@ -4,7 +4,24 @@
 #    Avg. HP: [VALUE]
 #    Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
+BEGIN{FS="\t"}
+{
+if (NR!=1){
+#
+# adds the 6th column (hp columns)  excluding the 1st row
+hp+= $6
+#Counts the number of lines in the file
+sum+=1
+# adds the 7th column ( attack collumn) 
+attack+= $7
+}
+}
+END{
+# Prints the total hp divided by the number of pokemon (mean)
 
+print "Total Pokemon:" sum
+print "Avg. HP:" hp/sum
+print "Avg. Attack: " attack/sum }
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
