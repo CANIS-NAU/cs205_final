@@ -9,3 +9,23 @@
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
+awk 'BEGIN{FS="\n"}
+{
+if (NR != 1){
+# Add up to number of total pokemon
+totalPokemon+=1
+
+# Add to total HP to be used in calculation of average later
+totalHP+=$6
+
+# Add to total attack to be used in calculation of average later
+totalAttack+=$7
+}
+}
+END{
+# Print results
+print "======= SUMMARY OF POKEMON.DAT ======"
+print "Total Pokemon: totalPokemon"
+print "Avg. HP: totalHP/totalPokemon"
+print "Avg. Attack: totalAttack/totalPokemon"
+print "# ======= END SUMMARY ======="}'
