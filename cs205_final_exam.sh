@@ -5,6 +5,42 @@
 #    Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
 
+#begin the awk script
+BEGIN{FS="\t"}
+{
+# test for number of lines 	
+if (NR !=1){
+
+# calc total pokemon
+totalPokemon+=1
+
+# calc hp
+hp+=$6
+
+# calc attack
+attack+=$7
+}
+}
+
+# end the awk script
+END{
+
+#print the table header
+print "======= SUMMARY OF POKEMON.DAT ======"
+
+#print the subtitle and total pokemon
+print "    Total Pokemon:  " totalPokemon
+
+#print subtitle and avg hp
+print "    Avg. HP:  " hp/totalPokemon
+
+#print subtitle and avg attack
+print "    Avg. Attack: " attack/totalPokemon
+
+#print end 
+print "======= END SUMMARY ======="}
+
+
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
