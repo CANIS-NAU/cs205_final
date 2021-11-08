@@ -9,3 +9,34 @@
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
+
+# 001
+# Sheth
+# ss3756
+BEGIN{FS="\t"}
+{
+if (NR!=1){
+#TODO change HP to add up the number of HP on the Pokemon listed
+hp+=$6
+
+#calculate the average attack
+Attackhp+=$7
+
+#Counts the number of lines in the file
+sum+=1
+}
+}
+END{
+# Prints the desired output
+print "======= SUMMARY OF " FILENAME " ======"
+print "   Total Pokemon: " sum
+print "   Avg. HP: " hp/sum
+print "   Avg. Attack: " Attackhp/sum
+print "======= END SUMMARY ======="
+
+
+}
+
+
+
+
