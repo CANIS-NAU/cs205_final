@@ -18,9 +18,11 @@ BEGIN {FS="[space]"}
   }
 }
 END{
-  print "TOTAL POKEMON: " num
+  print ======= SUMMARY OF POKEMON.DAT ======
+  print "TOTAL POKEMON: " sum
   print "Avg. HP: " hp / sum
   print "Avg. Attack: " atk / sum
+  print ======= END SUMMARY =======
 }
 '
 
