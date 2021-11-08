@@ -10,16 +10,19 @@
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
 
+
+
 #header
-print('======= SUMMARY OF POKEMON.DAT =======')
-#prints toatl amount of pokemon
-print('Total Pokemon: ')
+echo ======= SUMMARY OF POKEMON.DAT =======
+#prints total amount of pokemon
+echo Total Pokemon: 
+awk END'{print NR}' $1
 
 #prints average hp of all pokemon
-print('Avg. HP: ')
-
+echo Avg. HP: 
+awk '{s+=$6} {a=s/NR} END {print a}' $1
 #prints average attack of all pokemon
-print('Avg. Attack: ')
-
+echo Avg. Attack: 
+awk '{s2+=$7} {a2=s2/NR} END {print a2}' $1
 #footer
-print('======= END SUMMARY =======')
+echo ======= END SUMMARY =======
