@@ -5,6 +5,25 @@
 #    Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
 
+
+BEGIN{FS="\t"}
+{
+	if (NR!=1){
+		sum=NR-1 #counts total number of pokemon
+
+		hp+=$6 #total hp of all pokemon listed
+
+		attack+=$7 #total attack of all pokemon listed
+	}
+}
+END{
+print "Total Pokemon: ", sum
+print "Avg. HP: ", hp/sum
+print "Avg. Attack: ", attack/sum
+}
+
+
+
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
