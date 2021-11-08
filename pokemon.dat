@@ -450,7 +450,7 @@
 403	Shinx	Electric		263	45	65	34	40	34	45	4	False
 404	Luxio	Electric		363	60	85	49	60	49	60	4	False
 405	Luxray	Electric		523	80	120	79	95	79	70	4	False
-406	Budew	Grass	Poison	280	40	30	35	50	70	55	4	False
+406 Budew	Grass	Poison	280	40	30	35	50	70	55	4	False
 407	Roserade	Grass	Poison	515	60	70	65	125	105	90	4	False
 408	Cranidos	Rock		350	67	125	40	30	30	58	4	False
 409	Rampardos	Rock		495	97	165	60	65	50	58	4	False
