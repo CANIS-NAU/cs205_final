@@ -11,18 +11,18 @@ cat $FILE | awk '
 BEGIN {FS="[space]"}
 {
   if(NR!=1) {
-    hp+=$5
-    atk+=$7
+    hp+=$6
+    atk+=$8
     sum+=1
     num = $1 + 0
   }
 }
 END{
-  print ======= SUMMARY OF POKEMON.DAT ======
-  print "TOTAL POKEMON: " sum
-  print "Avg. HP: " hp / sum
-  print "Avg. Attack: " atk / sum
-  print ======= END SUMMARY =======
+  print "======= SUMMARY OF POKEMON.DAT ======"
+  print "TOTAL POKEMON: " num
+  print "Avg. HP: " hp / num
+  print "Avg. Attack: " atk / num
+  print "======= END SUMMARY ======="
 }
 '
 
