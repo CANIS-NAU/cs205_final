@@ -15,3 +15,22 @@
 # The data file will be passed in to the script as a positional parameter and will not
 # necessarily be called pokemon.dat. However, you can assume that any file passed to this
 # script will be formatted exactly the way pokemon.dat is formatted.
+
+
+# Begin
+BEGIN{
+
+}
+# Dev
+{
+    tot_legendary = 0;
+    average_hp = ($6) /(NR-1);
+    average_defense = ($8) / (NR-1);
+}
+
+# End
+END {
+    printf("Total Non-Legendary Pokemon: ", tot_legendary);
+    printf("Avg. HP: ", average_hp);
+    printf("Avg. Defense: ", average_defense);
+}
