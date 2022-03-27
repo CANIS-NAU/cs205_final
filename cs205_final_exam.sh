@@ -16,11 +16,16 @@
 # necessarily be called pokemon.dat. However, you can assume that any file passed to this
 # script will be formatted exactly the way pokemon.dat is formatted.
 
+#begin awk script
 awk 'BEGIN{FS="\t"}
 {
+	#filter out all legendary pokemon
 	if ($13 == "False"){
+		#count up number of non-legendary pokemon
 		total += 1
+		#count total hp 
 		hp += $5
+		#count total defense
 		defense += $7
 	}
 } 
