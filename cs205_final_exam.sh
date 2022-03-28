@@ -15,3 +15,55 @@
 # The data file will be passed in to the script as a positional parameter and will not
 # necessarily be called pokemon.dat. However, you can assume that any file passed to this
 # script will be formatted exactly the way pokemon.dat is formatted.
+
+# Section Number
+# 001
+# Last Name
+# Nannen
+# First Name
+# Noah
+# NAU Username
+# ncn23
+
+# start the file and introduce awk elements
+#!/bin/bash
+BEGIN{FS="\t"}
+{
+
+#initialize new variables
+lSum=0
+hpSum=0
+defSum=0
+lines=0
+
+# start running through the file
+if (NR!=1){
+
+# check if the pokemon is legendary
+if [ awk '$12 == True'  ]; then
+  # add to the legendary sum
+	lSum+=1
+  
+# otherwise
+else
+  # calculate total hp
+  hpSum=hpSum+'$6'
+  # calculate total defense
+  defSum=defSum+'$8'
+
+# count the number of lines
+lines=lines+1
+
+# determine the averages
+hpAve=hpSum/ave
+defAve=defSum/ave
+}
+}
+END{
+# display the summary
+print "======= SUMMARY OF POKEMON.DAT ======"
+print "    Total Non-Legendary Pokemon: $lSum"
+print "    Avg. HP: $hpAve"
+print "    Avg. Defense: $defAve"
+print " ======= END SUMMARY ======="
+}
