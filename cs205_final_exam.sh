@@ -15,3 +15,21 @@
 # The data file will be passed in to the script as a positional parameter and will not
 # necessarily be called pokemon.dat. However, you can assume that any file passed to this
 # script will be formatted exactly the way pokemon.dat is formatted.
+echo  "======= SUMMARY OF POKEMON.DAT ======"
+file=$1
+
+echo "Total Non-Legendary Pokemon: ${nonLeg}" 
+
+cut -f13 $file|awk '/False/'|wc -l
+
+echo "Avg. HP"
+
+cat $file|awk '{ sum+=$6 } END { if (NR > 0) print sum / NR }'
+
+
+echo "Avg. Def"
+
+cat pokemon.dat|awk '{ sum+=$8 } END { if (NR > 0) print sum / NR }'
+
+
+echo "======= END SUMMARY ======="
