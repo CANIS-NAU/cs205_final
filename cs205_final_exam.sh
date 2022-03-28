@@ -15,3 +15,25 @@
 # The data file will be passed in to the script as a positional parameter and will not
 # necessarily be called pokemon.dat. However, you can assume that any file passed to this
 # script will be formatted exactly the way pokemon.dat is formatted.
+
+BEGIN{FS="\t"}
+{
+    if (NR!=1){
+        #TODO change HP to add up the number of HP on the Pokemon listed
+        hp+= $6
+
+	defense+= $8
+
+	sum+=1
+	
+
+  }
+}
+
+END{
+    hp = hp/sum
+    defense = defense/sum
+    print "Average base HP = ", hp
+    print "Average defense  = ", defense
+    print "Total Non-Legendary = ",sum
+}
