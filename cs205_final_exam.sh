@@ -1,4 +1,6 @@
 #!/bin/awk -f
+#I really tried on this one, I don't know what I am doing wrong
+#if you could text me a video explaining my stupidity that would be appriciated (707)548-7171
 
 filename=$1
 if [ -f "$filename" ]; then
