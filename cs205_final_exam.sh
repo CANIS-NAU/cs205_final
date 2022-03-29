@@ -18,7 +18,7 @@
 echo  "======= SUMMARY OF POKEMON.DAT ======"
 file=$1
 
-echo "Total Non-Legendary Pokemon: ${nonLeg}" 
+echo "Total Non-Legendary Pokemon: " 
 
 cut -f13 $file|awk '/False/'|wc -l
 
