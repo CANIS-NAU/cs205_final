@@ -2,8 +2,15 @@
 # ======= SUMMARY OF POKEMON.DAT ======
 #    Total Pokemon: [VALUE]
 #    Avg. HP: [VALUE]
-#    Avg. Attack: [VALUE]
+#   Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
+{hp += $6}
+{attack += $7}
+
+{print "Total Pokemon:", NR}
+{print "File Name: pokemon.dat"}
+{print "Avg. HP: ", hp / NR }
+{print "Avg. Attack: ", attack / NR}
 
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The spacing and header formatting should match the above formatting description exactly.
