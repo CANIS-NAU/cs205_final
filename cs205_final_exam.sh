@@ -1,0 +1,1 @@
+awk 'BEGIN{sum=0; c1=0; total=0; comb=0; attack=0} //{c1++}{sum=sum+$5}{total=total+$1}{comb++}{attack=attack+$6}  END{print "======= SUMMARY OF POKEMON.DAT ======"  "Total Pokemon: ", Total  "Avg HP: ", sum/c1 "Avg Attack: ", attack/comb "======= END SUMMARY ======="}' pokemon.dat
