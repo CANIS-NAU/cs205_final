@@ -2,30 +2,43 @@
 # through a file formatted like pokemon.dat and provides a printed report in
 # the following format (where your script correctly calculates the values that
 # go into the [VALUE] placeholders):
+
+# initialize variables
 double countNames
 double countHP
 double total
 double avgHP
 double avgAttack
-function countlines(n){
+
+# increment counter for each name in file to find line count
+function countlines(sumTotal){
+        # Increment countNames by 1
         countNames++
         }
+# run countlines to find total number of lines
 {countlines($0)}
 
-function mean(n){
+# Calculate mean given column as a parameter
+function mean(column){
+        # Increment countMean variable by 1
         countMean++
-        total=total+n
+        # add column value to total to find sum total of all values
+        total=total+column
         }
 
 # ===== SUMMARY OF DATA FILE =====
 #    File name: [VALUE]
+# Display file name
 {print "File name: " FILENAME }
 #    Total Pokemon: [VALUE]
+# Display total count of pokemon
 {print "Total Pokemon: " countNames }
 #    Avg. HP: [VALUE]
+# Display Average HP of all pokemon
 {avgHP=mean($5)}
 {print "Avg. HP: " total/countMean }
 #    Avg. Attack: [VALUE]
+# Display Average Attack of all pokemon
 {avgAttack=mean($6)}
 {print "Avg. Attack: " total/countMean}
 # ===== END SUMMARY =====
