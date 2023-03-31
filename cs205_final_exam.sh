@@ -18,7 +18,7 @@ awk 'END{print "Total Pokemon: ",NR-1}' pokemon.dat
 #This awk command finds the average value  of the HP column and subtracts the header line
 awk '{sum += $5} END {print "Avg. HP: ", sum/(NR-1)}' pokemon.dat 
 
-#This awk command calculates the Average Value of the Attack column and subtracts the divisor by One to account for the header line
+#This awk command calculates the Average Value of the Attack column and subtracts the header line
 awk '{sum_attack+=$6} END {print "Avg. Attack: ", sum_attack/(NR-1)}' pokemon.dat
 
 #This echo command prints the last line
